@@ -61,7 +61,7 @@ class Workspace:
         self.type = type
 
 
-class Task:
+class MotionTask:
     duration: str
     workspace: Workspace
     id: str

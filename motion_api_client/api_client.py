@@ -2,7 +2,7 @@ import json
 from datetime import datetime
 from typing import overload, List
 import requests
-from motion_api_client.models.Task import Task
+from motion_api_client.models.MotionTask import MotionTask
 from motion_api_client.models.create_task_request import CreateTaskRequest, AutoScheduled
 from motion_api_client.models.update_task_request import UpdateTaskRequest
 
@@ -27,7 +27,7 @@ class ApiClient:
             raise Exception(f"Error creating task. HTTP code: {r.status_code}.\nError message: {resp['message']} ")
 
         response_json = r.json()
-        task_list = [Task(**t) for t in response_json["tasks"]]
+        task_list = [MotionTask(**t) for t in response_json["tasks"]]
         return task_list
 
     def delete_task(self, task_id: str):
@@ -44,7 +44,7 @@ class ApiClient:
             resp = r.json()
             raise Exception(f"Error creating task. HTTP code: {r.status_code}.\nError message: {resp['message']} ")
         json_response = r.json()
-        task = Task(**json_response)
+        task = MotionTask(**json_response)
         return task
 
     def create_task(self, body: CreateTaskRequest):

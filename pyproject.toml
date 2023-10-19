@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "usemotionclient"
+name = "motion_api_client"
 version = "0.1.0"
 description = ""
 authors = ["James Lund <james.s.lund@gmail.com>"]
