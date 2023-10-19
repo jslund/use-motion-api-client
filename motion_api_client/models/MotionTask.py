@@ -1,4 +1,5 @@
 import datetime
+from dataclasses import dataclass
 from typing import List
 
 
@@ -60,7 +61,7 @@ class Workspace:
         self.labels = labels
         self.type = type
 
-
+@dataclass
 class MotionTask:
     duration: str
     workspace: Workspace
